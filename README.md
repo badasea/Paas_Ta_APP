@@ -8,13 +8,14 @@
 기획 및 디자인 1명
 
 
-👨 badasea
+👨 @EungBum
 
 
 개발 2명
 
-👨 badasea
-👨 badasea
+👨 @badasea
+
+👨 @joohyun333
 
 
 
