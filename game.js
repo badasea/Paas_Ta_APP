@@ -18,13 +18,6 @@ backgroundImg.onload = function() {
   backgroundReady = true;
 };
 
-let bR = false;
-let b = new Image();
-b.src = "./assets/b.png";
-
-b.onload = function() {
-  bR = true;
-};
 
 //Define and Load Hero Image
 
@@ -62,7 +55,6 @@ let rupees = {
 function loadImage() {
   if (backgroundReady) {
     context.drawImage(backgroundImg, 0, 0);
-    context.drawImage(b, 100, 100);
   }
 
   if (rupeeReady) {
@@ -208,3 +200,13 @@ function gameLoop() {
 }
 
 gameLoop();
+
+/////////add
+
+document.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(e) {
+	if (e.keyCode === 88) {
+		alert("안녕하세요. 서경대 카페 SP입니다.");
+	}
+}
