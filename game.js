@@ -2,8 +2,8 @@
 let canvas = document.createElement("canvas");
 let context = canvas.getContext("2d");
 
-canvas.width = 480;
-canvas.height = 320;
+canvas.width = 900;
+canvas.height = 650;
 
 document.body.appendChild(canvas);
 
@@ -12,7 +12,9 @@ document.body.appendChild(canvas);
 let backgroundReady = false;
 let backgroundImg = new Image();
 
-backgroundImg.src = "./assets/background.png";
+//backgroundImg.src = "./assets/background.png";
+
+backgroundImg.src = "./assets/map.jpg";
 
 backgroundImg.onload = function() {
   backgroundReady = true;
@@ -206,7 +208,17 @@ gameLoop();
 document.addEventListener("keydown", checkKeyPressed, false);
 
 function checkKeyPressed(e) {
-	if (e.keyCode === 88) {
+	// x키
+  if (e.keyCode === 88) {
 		alert("안녕하세요. 서경대 카페 SP입니다.");
 	}
+  // z키
+  if (e.keyCode === 90) {
+		openWin()
+	}
 }
+
+function openWin(){
+  // 파스타 웹 페이지 링크 예정  
+  window.open("http://www.naver.com", "네이버새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+} 
