@@ -220,5 +220,20 @@ function checkKeyPressed(e) {
 
 function openWin(){
   // 파스타 웹 페이지 링크 예정  
-  window.open("http://www.naver.com", "네이버새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
-} 
+  window.open("https://www.naver.com", "naver", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+}
+
+
+// 마우스 클릭
+addEventListener('mousedown',e=>{
+  // 마우스 좌표 찾기
+  var x = e.clientX;
+  var y = e.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  console.log(coords);
+  // 클릭 이벤트
+  if (x >= 200 && x <= 230 && y >= 400 && y <= 500) {
+    openWin()
+    console.log('마우스 버튼 ON 이벤트 발생!');
+  }
+});

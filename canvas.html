@@ -24,20 +24,7 @@
       <video autoplay="true" id="videoElement">
       </video>
   </div>
-  <script>
-    var video = document.querySelector("#videoElement");
-     
-    if (navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function (stream) {
-          video.srcObject = stream;
-        })
-        .catch(function (err0r) {
-          console.log("Something went wrong!");
-        });
-    }
-    </script>
-    <P>z는 네이버 열기 ,x는 팝업</P>
+    <script src="webcam.js"></script>
     <script src="game.js"></script>
   </body>
 </html>
