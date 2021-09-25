@@ -34,12 +34,12 @@ heroImg.onload = function() {
 
 let hero = {
   speed: 3,
-  x: 0,
-  y: 0
+  x: 500,
+  y: 350
 };
 
 //Load Rupee Image
-let rupeeReady = false;
+//let rupeeReady = false;
 let rupeeImg = new Image();
 
 rupeeImg.onload = function() {
@@ -48,10 +48,10 @@ rupeeImg.onload = function() {
 
 rupeeImg.src = "./assets/rupee.png";
 
-let rupees = {
-  x: 0,
-  y: 0
-};
+// let rupees = {
+//   x: 0,
+//   y: 0
+// };
 
 //Load Images Function
 function loadImage() {
@@ -59,9 +59,9 @@ function loadImage() {
     context.drawImage(backgroundImg, 0, 0);
   }
 
-  if (rupeeReady) {
-    context.drawImage(rupeeImg, rupees.x, rupees.y);
-  }
+  // if (rupeeReady) {
+  //   context.drawImage(rupeeImg, rupees.x, rupees.y);
+  // }
 }
 
 //Movement Controls
@@ -152,15 +152,15 @@ function moveHero() {
     hasMoved = true;
   }
 
-  //Check for Rupee Collisions
-  if (
-    hero.x <= rupees.x + 32 &&
-    rupees.x <= hero.x + 32 &&
-    hero.y <= rupees.y + 32 &&
-    rupees.y <= hero.y + 32
-  ) {
-    generate();
-  }
+  // //Check for Rupee Collisions
+  // if (
+  //   hero.x <= rupees.x + 32 &&
+  //   rupees.x <= hero.x + 32 &&
+  //   hero.y <= rupees.y + 32 &&
+  //   rupees.y <= hero.y + 32
+  // ) {
+  //   //generate();
+  // }
 
   if (!hasMoved) {
     walkIndex = 0;
@@ -205,24 +205,46 @@ gameLoop();
 
 /////////add
 
-document.addEventListener("keydown", checkKeyPressed, false);
+// document.addEventListener("keydown", checkKeyPressed, false);
 
-function checkKeyPressed(e) {
-	// x키
-  if (e.keyCode === 88) {
-		alert("안녕하세요. 서경대 카페 SP입니다.");
-	}
-  // z키
-  if (e.keyCode === 90) {
-		openWin()
-	}
-}
+// function checkKeyPressed(e) {
+// 	// x키
+//   if (e.keyCode === 88) {
+// 		alert("안녕하세요. 서경대 카페 SP입니다.");
+// 	}
+//   // z키
+//   if (e.keyCode === 90) {
+// 		openWin()
+// 	}
+// }
+
+// addEventListener("keydown", a => {
+//   if (a.keyCode === 88) {
+//     alert("안녕하세요. 서경대 카페 SP입니다.");
+//   }
+//   // do something
+// });
 
 function openWin(){
   // 파스타 웹 페이지 링크 예정  
-  window.open("https://www.naver.com", "naver", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+  window.open("https://www.naver.com", "","width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
 }
 
+// 키보드 입력
+addEventListener('keydown',e=>{
+  // 마우스 좌표 찾기
+  var x = hero.x;
+  var y = hero.y;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  console.log(coords);
+  // 클릭 이벤트
+  if (x >= 200 && x <= 300 && y >= 100 && y <= 200) {
+    if (e.keyCode === 88) {
+      openWin()
+      console.log('키보드 이벤트 발생!');
+    }
+  }
+});
 
 // 마우스 클릭
 addEventListener('mousedown',e=>{
@@ -232,7 +254,7 @@ addEventListener('mousedown',e=>{
   var coords = "X coords: " + x + ", Y coords: " + y;
   console.log(coords);
   // 클릭 이벤트
-  if (x >= 200 && x <= 230 && y >= 400 && y <= 500) {
+  if (x >= 200 && x <= 300 && y >= 200 && y <= 300) {
     openWin()
     console.log('마우스 버튼 ON 이벤트 발생!');
   }
