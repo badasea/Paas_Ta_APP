@@ -68,6 +68,11 @@
 - [ ]  상품 등록 페이지
 - [ ]  사용자가 구매한 상품 리스트 페이지(영수증)
 
+- 웹페이지 디자인
+- [ ]  로그인 페이지 벤치마킹(https://material-ui.com/store/previews/onepirate/)
+- [ ]  상품 진열 페이지 벤치마킹(https://www.musinsa.com/)
+- [ ]  구매 페이지 벤치마킹 미지정
+
 ---
 
 # ⚙ 기술 스택 
